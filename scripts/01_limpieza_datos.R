@@ -13,9 +13,6 @@ library(janitor)
 options(stringsAsFactors = FALSE)
 set.seed(2026)
 
-cat("========================================\n")
-cat("Limpieza de datos de biofertilizantes\n")
-cat("========================================\n\n")
 
 # 1. Cargar datos raw ------------------------------------------------
 cat("📂 Cargando archivo raw...\n")
@@ -101,11 +98,11 @@ encuesta_clean <- encuesta_raw %>%
   # Filtrar filas sin cultivo válido
   filter(cultivo_clean != "Otro", !is.na(produccion_qq_mz))
 
-cat("✅ Limpieza completada\n")
+cat("Limpieza completada\n")
 cat("   Filas resultantes:", nrow(encuesta_clean), "\n\n")
 
 # 4. Estadísticas rápidas -------------------------------------------
-cat("📊 Resumen de datos:\n")
+cat("Resumen de datos:\n")
 cat("--------------------\n")
 cat("Cultivos:\n")
 print(table(encuesta_clean$cultivo_clean))
@@ -121,10 +118,10 @@ print(table(encuesta_clean$cambio_plagas_simple))
 
 # 5. Guardar datos limpios ------------------------------------------
 write_csv(encuesta_clean, "data/processed/encuesta_limpia.csv")
-cat("\n💾 Datos guardados en: data/processed/encuesta_limpia.csv\n")
+cat("\n Datos guardados en: data/processed/encuesta_limpia.csv\n")
 
 # 6. Mostrar primeras filas -----------------------------------------
-cat("\n📋 Primeras 5 filas:\n")
+cat("\n Primeras 5 filas:\n")
 print(head(encuesta_clean, 5))
 
-cat("\n✅ Proceso completado con éxito!\n")
+cat("\n Proceso completado con éxito!\n")

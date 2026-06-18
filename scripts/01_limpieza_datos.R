@@ -15,12 +15,12 @@ set.seed(2026)
 
 
 # 1. Cargar datos raw ------------------------------------------------
-cat("📂 Cargando archivo raw...\n")
+cat(" Cargando archivo raw...\n")
 
 encuesta_raw <- read_excel("data/raw/encuesta_raw.xlsx", 
                            sheet = "Respuestas de formulario 1")
 
-cat("✅ Datos cargados:", nrow(encuesta_raw), "filas,", 
+cat(" Datos cargados:", nrow(encuesta_raw), "filas,", 
     ncol(encuesta_raw), "columnas\n\n")
 
 # 2. Función para extraer números de textos -------------------------
